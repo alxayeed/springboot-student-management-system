@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller // make this class to spring mvc class to handle requests
 public class StudentController {
-    private StudentService studentService;
+    private final StudentService studentService;
 
     public StudentController(StudentService studentService) {
         this.studentService = studentService;
@@ -37,7 +37,7 @@ public class StudentController {
     public String saveStudent(@ModelAttribute("student") Student student){
         studentService.saveStudent(student);
         return "redirect:/students";
-    };
+    }
 
     @GetMapping("/students/edit/{id}")
     public String editStudentForm(@PathVariable Long id,Model model){
@@ -66,5 +66,12 @@ public class StudentController {
         return "redirect:/students";
     }
 
+    @GetMapping("/students/{id}")
+    public String deleteStudent(@PathVariable Long id,
+                                @ModelAttribute("student") Student student,
+                                Model model) {
+        studentService.deleteStudentByID(id);
+        return "redirect:/students";
+    }
 
 }

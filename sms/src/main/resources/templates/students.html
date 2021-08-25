@@ -47,6 +47,10 @@
                         <a th:href = "@{/students/edit/{id} (id = ${student.id})}"
                         class="btn btn-primary text-white"
                         >Update</a>
+
+                        <a th:href = "@{/students/{id} (id = ${student.id})}"
+                           class="btn btn-danger text-white"
+                        >Delete</a>
                     </td>
                 </tr>
             </tbody>
