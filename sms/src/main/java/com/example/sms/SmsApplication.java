@@ -14,14 +14,14 @@ public class SmsApplication implements CommandLineRunner {
 		SpringApplication.run(SmsApplication.class, args);
 	}
 
-	@Autowired
-	private StudentRepository studentRepository;
-
-	public void run(String... args) throws Exception{
-		Student student1 = new Student("Al", "Xayeed", "alxayeed@gmail.com");
-		studentRepository.save(student1);
-
-		Student student2 = new Student("Abdullah", "Sayeed", "alsayeed@yahoo.com");
-		studentRepository.save(student2);
-	}
+//	@Autowired
+//	private StudentRepository studentRepository;
+//
+//	public void run(String... args) throws Exception{
+//		Student student1 = new Student("Al", "Xayeed", "alxayeed@gmail.com");
+//		studentRepository.save(student1);
+//
+//		Student student2 = new Student("Abdullah", "Sayeed", "alsayeed@yahoo.com");
+//		studentRepository.save(student2);
+//	}
 }

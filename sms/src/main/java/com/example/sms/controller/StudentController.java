@@ -1,5 +1,6 @@
 package com.example.sms.controller;
 
+import com.example.sms.entity.Student;
 import com.example.sms.services.StudentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,5 +20,7 @@ public class StudentController {
         model.addAttribute("students", studentService.getAllStudents());
         return "students";
     }
+
+
 
 }
