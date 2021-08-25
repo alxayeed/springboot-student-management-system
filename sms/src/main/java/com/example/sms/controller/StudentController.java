@@ -5,6 +5,8 @@ import com.example.sms.services.StudentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller // make this class to spring mvc class to handle requests
 public class StudentController {
@@ -28,5 +30,12 @@ public class StudentController {
         model.addAttribute("student", student);
         return "create_student";
     }
+
+    @PostMapping("/students")
+    //TODO ??
+    public String saveStudent(@ModelAttribute("student") Student student){
+        return "redirect:/student";
+    };
+
 
 }
