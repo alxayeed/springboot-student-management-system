@@ -23,7 +23,7 @@ public class StudentController {
         return "students";
     }
 
-    @GetMapping("students/new")
+    @GetMapping("/students/new/")
     public String createStudentForm(Model model){
         //important! this holds student form data
         Student student = new Student();
@@ -34,7 +34,8 @@ public class StudentController {
     @PostMapping("/students")
     //TODO ??
     public String saveStudent(@ModelAttribute("student") Student student){
-        return "redirect:/student";
+        studentService.saveStudent(student);
+        return "redirect:/students";
     };
 
 
